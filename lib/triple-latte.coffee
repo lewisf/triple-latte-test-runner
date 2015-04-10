@@ -14,7 +14,7 @@ STATS_MATCHER = /\d+\s+(?:failing|passing|pending)/g
 module.exports = class MochaWrapper extends events.EventEmitter
 
   constructor: (@context, debugMode = false) ->
-    @mocha = null
+    @tripleLatte = null
     @node = atom.config.get 'triple-latte-test-runner.nodeBinaryPath'
     @textOnly = atom.config.get 'triple-latte-test-runner.textOnlyOutput'
     @options = atom.config.get 'triple-latte-test-runner.options'
@@ -27,13 +27,17 @@ module.exports = class MochaWrapper extends events.EventEmitter
     @resetStatistics()
 
   stop: ->
-    if @mocha?
-      killTree(@mocha.pid)
-      @mocha = null
+    if @tripleLatte?
+      killTree(@tripleLatte.pid)
+      @tripleLatte = null
 
   run: ->
 
     flags = [
+      '--config'
+      'test/config'
+      '--timeout'
+      '10000'
       @context.test
     ]
 
@@ -50,7 +54,7 @@ module.exports = class MochaWrapper extends events.EventEmitter
 
     if @context.grep
       flags.push '--grep'
-      flags.push escape(@context.grep, escapeEverything: true)
+      flags.push @context.grep
 
     if @options
       Array::push.apply flags, @options.split ' '
@@ -60,23 +64,28 @@ module.exports = class MochaWrapper extends events.EventEmitter
       env: env
 
     @resetStatistics()
+<<<<<<< HEAD:lib/mocha.coffee
     @mocha = spawn @context.mocha, flags, opts
+=======
+
+    @tripleLatte = spawn @context.tripleLatte, flags, opts
+>>>>>>> This works!:lib/triple-latte.coffee
 
     if @textOnly
-      @mocha.stdout.on 'data', (data) => @emit 'output', data.toString()
-      @mocha.stderr.on 'data', (data) => @emit 'output', data.toString()
+      @tripleLatte.stdout.on 'data', (data) => @emit 'output', data.toString()
+      @tripleLatte.stderr.on 'data', (data) => @emit 'output', data.toString()
     else
       stream = ansi(chunked: false)
-      @mocha.stdout.pipe stream
-      @mocha.stderr.pipe stream
+      @tripleLatte.stdout.pipe stream
+      @tripleLatte.stderr.pipe stream
       stream.on 'data', (data) =>
         @parseStatistics data
         @emit 'output', clickablePaths.link data.toString()
 
-    @mocha.on 'error', (err) =>
+    @tripleLatte.on 'error', (err) =>
       @emit 'error', err
 
-    @mocha.on 'exit', (code) =>
+    @tripleLatte.on 'exit', (code) =>
       if code is 0
         @emit 'success', @stats
       else

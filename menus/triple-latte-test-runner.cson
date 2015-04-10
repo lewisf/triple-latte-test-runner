@@ -10,7 +10,7 @@
   {
     'label': 'Packages'
     'submenu': [
-      'label': 'triple-latte-test-runner'
+      'label': 'Triple Latte Test Runner'
       'submenu': [
         { 'label': 'Run tests', 'command': 'triple-latte-test-runner:run' }
         { 'label': 'Debug tests', 'command': 'triple-latte-test-runner:debug' }

@@ -8,7 +8,7 @@
 # For more detailed documentation see
 # https://atom.io/docs/latest/advanced/keymaps
 'atom-workspace':
-  'ctrl-alt-m': 'triple-latte-test-runner:run'
+  'ctrl-alt-t': 'triple-latte-test-runner:run'
   'ctrl-alt-d': 'triple-latte-test-runner:debug'
-  'ctrl-alt-shift-m': 'triple-latte-test-runner:run-previous'
+  'ctrl-alt-shift-t': 'triple-latte-test-runner:run-previous'
   'ctrl-alt-shift-d': 'triple-latte-test-runner:debug-previous'

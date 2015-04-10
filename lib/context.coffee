@@ -6,19 +6,18 @@ selectedTest = require './selected-test'
 exports.find = (editor) ->
   root = closestPackage editor.getPath()
   if root
-    # mochaBinary = path.join root, 'node_modules', 'triple-latte', 'node_modules', '.bin', 'mocha'
-    mochaBinary = path.join root, 'node_modules', 'triple-latte', 'bin', 'triple-latte'
-    if not fs.existsSync mochaBinary
-      mochaBinary = 'mocha'
+    latteBinary = path.join root, 'node_modules', '.bin', 'triple-latte'
+    if not fs.existsSync latteBinary
+      latteBinary = 'triple-latte'
     root: root
     test: path.relative root, editor.getPath()
     grep: selectedTest.fromEditor editor
-    mocha: mochaBinary
+    tripleLatte: latteBinary
   else
     root: path.dirname editor.getPath()
     test: path.basename editor.getPath()
     grep: selectedTest.fromEditor editor
-    mocha: 'mocha'
+    tripleLatte: 'triple-latte'
 
 closestPackage = (folder) ->
   pkg = path.join folder, 'package.json'
