@@ -1,4 +1,4 @@
-# Atom : Triple Late Test Runner
+# Atom : Triple Latte Test Runner
 
 Taken and modified from [Atom Mocha Test Runner](https://github.com/TabDigital/atom-mocha-test-runner/blob/master/LICENSE.md)
 
