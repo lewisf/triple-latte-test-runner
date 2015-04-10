@@ -1,16 +1,16 @@
-# Atom : Mocha test runner
+# Atom : Triple Late Test Runner
 
-[![License](http://img.shields.io/badge/license-MIT-yellow.svg?style=flat)](https://github.com/TabDigital/atom-mocha-test-runner/blob/master/LICENSE.md)
+Taken and modified from [Atom Mocha Test Runner](https://github.com/TabDigital/atom-mocha-test-runner/blob/master/LICENSE.md)
 
-Runs [Mocha](https://github.com/visionmedia/mocha) unit tests from within Atom.
+Runs [Triple Latte](https://github.com/webedx-spark/triple-latte) unit tests from within Atom.
 
-- `ctrl-alt-m` runs either:
+- `ctrl-alt-t` runs either:
   - the current test file
   - or a single `it` / `describe` if the cursor is on that line
 
 - `ctrl-alt-d` runs mocha as before, but with `Debug Options` added
 
-- `ctrl-alt-shift-m` re-runs the last test selection
+- `ctrl-alt-shift-t` re-runs the last test selection
   - even if you switched to another tab
 
 - `ctrl-alt-shift-d` re-runs mocha as before, but with `Debug Options` added
