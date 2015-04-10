@@ -13,7 +13,7 @@ module.exports =
   config: # They are only read upon activation (atom bug?), thus the activationCommands for "settings-view:open" in package.json
     nodeBinaryPath:
       type: 'string'
-      default: '/usr/local/bin/node'
+      default: '/Users/lewis/.nvm/v0.10.21/bin/node'
       description: 'Path to the node executable'
     textOnlyOutput:
       type: 'boolean'

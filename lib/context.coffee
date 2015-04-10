@@ -6,7 +6,8 @@ selectedTest = require './selected-test'
 exports.find = (editor) ->
   root = closestPackage editor.getPath()
   if root
-    mochaBinary = path.join root, 'node_modules', '.bin', 'mocha'
+    # mochaBinary = path.join root, 'node_modules', 'triple-latte', 'node_modules', '.bin', 'mocha'
+    mochaBinary = path.join root, 'node_modules', 'triple-latte', 'bin', 'triple-latte'
     if not fs.existsSync mochaBinary
       mochaBinary = 'mocha'
     root: root
