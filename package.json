@@ -1,16 +1,16 @@
 {
-  "name": "mocha-test-runner",
-  "main": "./lib/mocha-test-runner",
+  "name": "triple-latte-test-runner",
+  "main": "./lib/triple-latte-test-runner",
   "version": "0.4.2",
-  "description": "Run Mocha tests from within Atom",
-  "repository": "https://github.com/TabDigital/atom-mocha-test-runner",
+  "description": "Run Triple Latte tests from within Atom",
+  "repository": "https://github.com/lchung-coursera/triple-latte-test-runner",
   "license": "MIT",
   "activationCommands": {
     "atom-workspace": [
-      "mocha-test-runner:run",
-      "mocha-test-runner:debug",
-      "mocha-test-runner:run-previous",
-      "mocha-test-runner:debug-previous"
+      "triple-latte-test-runner:run",
+      "triple-latte-test-runner:debug",
+      "triple-latte-test-runner:run-previous",
+      "triple-latte-test-runner:debug-previous"
     ],
     ".platform-darwin": [
       "settings-view:open"

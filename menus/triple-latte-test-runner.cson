@@ -1,0 +1,22 @@
+# See https://atom.io/docs/latest/creating-a-package#menus for more details
+'context-menu':
+  '.overlayer':
+      'Run Triple Latte tests': 'triple-latte-test-runner:run'
+      'Debug Triple Latte tests': 'triple-latte-test-runner:debug'
+      'Re-run last Triple Latte tests': 'triple-latte-test-runner:run-previous'
+      'Debug last Triple Latte tests': 'triple-latte-test-runner:debug-previous'
+
+'menu': [
+  {
+    'label': 'Packages'
+    'submenu': [
+      'label': 'triple-latte-test-runner'
+      'submenu': [
+        { 'label': 'Run tests', 'command': 'triple-latte-test-runner:run' }
+        { 'label': 'Debug tests', 'command': 'triple-latte-test-runner:debug' }
+        { 'label': 'Re-run last tests', 'command': 'triple-latte-test-runner:run-previous' }
+        { 'label': 'Debug last tests', 'command': 'triple-latte-test-runner:debug-previous' }
+      ]
+    ]
+  }
+]

@@ -15,13 +15,13 @@ module.exports = class MochaWrapper extends events.EventEmitter
 
   constructor: (@context, debugMode = false) ->
     @mocha = null
-    @node = atom.config.get 'mocha-test-runner.nodeBinaryPath'
-    @textOnly = atom.config.get 'mocha-test-runner.textOnlyOutput'
-    @options = atom.config.get 'mocha-test-runner.options'
-    @env = atom.config.get 'mocha-test-runner.env'
+    @node = atom.config.get 'triple-latte-test-runner.nodeBinaryPath'
+    @textOnly = atom.config.get 'triple-latte-test-runner.textOnlyOutput'
+    @options = atom.config.get 'triple-latte-test-runner.options'
+    @env = atom.config.get 'triple-latte-test-runner.env'
 
     if debugMode
-      optionsForDebug = atom.config.get 'mocha-test-runner.optionsForDebug'
+      optionsForDebug = atom.config.get 'triple-latte-test-runner.optionsForDebug'
       @options = "#{@options} #{optionsForDebug}"
 
     @resetStatistics()

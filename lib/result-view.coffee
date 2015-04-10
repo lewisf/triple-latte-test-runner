@@ -1,13 +1,13 @@
 {$, $$$, View} = require 'atom-space-pen-views'
 clickablePaths = require './clickable-paths'
 
-DEFAULT_HEADING_TEXT = 'Mocha test results'
+DEFAULT_HEADING_TEXT = 'Triple Latte test results'
 
 module.exports =
 class ResultView extends View
 
   @content: ->
-    @div class: 'mocha-test-runner', =>
+    @div class: 'triple-latte-test-runner', =>
       @div class: 'panel', =>
         @div outlet: 'heading', class: 'heading', =>
           @div class: 'pull-right', =>
