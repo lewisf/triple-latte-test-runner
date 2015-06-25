@@ -64,12 +64,7 @@ module.exports = class TripleLatteWrapper extends events.EventEmitter
       env: env
 
     @resetStatistics()
-<<<<<<< HEAD:lib/mocha.coffee
-    @mocha = spawn @context.mocha, flags, opts
-=======
-
     @tripleLatte = spawn @context.tripleLatte, flags, opts
->>>>>>> This works!:lib/triple-latte.coffee
 
     if @textOnly
       @tripleLatte.stdout.on 'data', (data) => @emit 'output', data.toString()
