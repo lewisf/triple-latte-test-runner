@@ -11,7 +11,7 @@ clickablePaths = require './clickable-paths'
 
 STATS_MATCHER = /\d+\s+(?:failing|passing|pending)/g
 
-module.exports = class MochaWrapper extends events.EventEmitter
+module.exports = class TripleLatteWrapper extends events.EventEmitter
 
   constructor: (@context, debugMode = false) ->
     @tripleLatte = null
