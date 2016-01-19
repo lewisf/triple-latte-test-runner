@@ -35,7 +35,7 @@ module.exports = class TripleLatteWrapper extends events.EventEmitter
 
     flags = [
       '--config'
-      'test/config'
+      'config/test'
       '--timeout'
       '10000'
       @context.test
